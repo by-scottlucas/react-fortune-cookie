@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fortCookie",
-    "slug": "fortCookie",
+    "name": "Biscoito_da_Sorte",
+    "slug": "Biscoito_da_Sorte",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,17 +14,13 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+    "extra": {
+      "eas": {
+        "projectId": "aaf30c72-3df4-48c6-8578-92a0b24e8e15"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "com.lucas013.Biscoito_da_Sorte"
     }
   }
 }
