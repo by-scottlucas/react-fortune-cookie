@@ -1,27 +1,43 @@
 # React Native - Biscoito da Sorte
 
-Este projeto foi desenvolvido para fins de estudo sobre o React Native.
+Projeto de um app de biscoito da sorte desenvolvido para fins de estudo sobre React Native.
 
 ## Introdução
 
-O projeto se trata de uma aplicativo de biscoito da sorte onde, cada vez que o usuário clica no botão "Quebrar Biscoito" é exibida uma das frases disponíveisw no app habilitando assim a função de pegar outro biscoito e repetir o processo.
+O projeto simula um biscoito da sorte, onde cada vez que o usuário clica no botão "Quebrar Biscoito", é exibida uma das frases disponíveis no app. Após exibir a frase, o usuário pode pegar outro biscoito e repetir o processo.
 
-### Pré-requisitos
+## Estrutura do Projeto
 
-Ao clonar o repositório, é necessário primeiramente baixar as dependências do projeto. Abra um novo terminal no diretório do projeto e digite comando:
+O projeto possui a seguinte estrutura de pastas:
 
-```
-npm install
-```
+- **assets/**: Contém os arquivos de imagem usados no aplicativo.
+- **data/**: Contém os arquivos de dados, como as frases usadas no aplicativo.
+- **App.js**: Arquivo principal que contém o código do aplicativo.
 
-Para executar o projeto em ambiente de desenvolvimento, basta digitar o seguinte comando no terminal:
+## Pré-requisitos
 
-```
+Após clonar o repositório, siga os seguintes passos:
+
+1. Abra um terminal no diretório do projeto.
+
+2. Baixe as dependências do projeto executando o comando:
+
+    ```sh
+    npm install
+    ```
+
+Para executar o projeto em ambiente de desenvolvimento, use o comando:
+
+```sh
 npx expo start
 ```
 
-## Tecnologias utilizadas:
+## Tecnologias Utilizadas
 
 - JavaScript
 - React Native
 - Expo
+
+## Autor
+
+Este projeto foi desenvolvido por Lucas Santos Silva, profissional com formação técnica em Informática (Suporte) e Informática para Internet.
