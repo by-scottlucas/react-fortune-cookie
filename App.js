@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View, StatusBar } from 'react-native';
 
 import { frases } from './data/frasesData';
+
+const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 export default function App() {
 
@@ -34,7 +36,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
 
       <Image source={imagem} style={styles.imagem} />
 
@@ -54,12 +56,13 @@ export default function App() {
 
       </TouchableOpacity>
 
-    </View>
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: statusBarHeight,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

@@ -6,6 +6,7 @@ Projeto de um app de biscoito da sorte desenvolvido para fins de estudo sobre Re
 
 O projeto simula um biscoito da sorte, onde cada vez que o usuário clica no botão "Quebrar Biscoito", é exibida uma das frases disponíveis no app. Após exibir a frase, o usuário pode pegar outro biscoito e repetir o processo.
 
+
 ## Estrutura do Projeto
 
 O projeto possui a seguinte estrutura de pastas:
@@ -13,6 +14,7 @@ O projeto possui a seguinte estrutura de pastas:
 - **assets/**: Contém os arquivos de imagem usados no aplicativo.
 - **data/**: Contém os arquivos de dados, como as frases usadas no aplicativo.
 - **App.js**: Arquivo principal que contém o código do aplicativo.
+
 
 ## Pré-requisitos
 
@@ -38,6 +40,12 @@ npx expo start
 - React Native
 - Expo
 
+
 ## Autor
 
 Este projeto foi desenvolvido por Lucas Santos Silva, profissional com formação técnica em Informática (Suporte) e Informática para Internet.
+
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](./LICENSE).
