@@ -1,63 +1,47 @@
 import React, { useState } from 'react';
-import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View, StatusBar } from 'react-native';
+import { Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native-web';
 
-import { frases } from './data/frasesData';
+import cookieSoundFile from './assets/crumple-92100.mp3';
+import { phrases } from './data/phrasesData';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 export default function App() {
+  const [phrase, setPhrase] = useState(false);
+  const [textPhrase, setTextPhrase] = useState('');
+  const [image, setImage] = useState(require('./assets/biscoito.png'));
+  const [button, setButton] = useState('Quebrar Biscoito');
+  const cookieSound = new Audio(cookieSoundFile);
 
-  const [frase, setFrase] = useState(false);
-  const [textoFrase, setTextoFrase] = useState('');
-  const [imagem, setImagem] = useState(require('./assets/biscoito.png'));
-  const [botao, setBotao] = useState('Quebrar Biscoito');
+  const breakCookie = () => {
+    let randomNumber = Math.floor(Math.random() * phrases.length);
 
-  const quebrarBiscoito = () => {
-
-    let numeroAleatorio = Math.floor(Math.random() * frases.length);
-
-    if (!frase) {
-
-      setFrase(true);
-      setTextoFrase(` "${frases[numeroAleatorio]}"`);
-      setImagem(require('./assets/biscoitoAberto.png'));
-      setBotao('Pegar Outro');
-
+    if (!phrase) {
+      setPhrase(true);
+      cookieSound.play();
+      setTextPhrase(` "${phrases[randomNumber]}"`);
+      setImage(require('./assets/biscoitoAberto.png'));
+      setButton('Pegar Outro');
     } else {
-
-      setFrase(false);
-      setTextoFrase('');
-      setImagem(require('./assets/biscoito.png'));
-      setBotao('Quebrar Biscoito');
-
+      setPhrase(false);
+      setTextPhrase('');
+      setImage(require('./assets/biscoito.png'));
+      setButton('Quebrar Biscoito');
     }
-
-
-  }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
+      <Image source={image} style={styles.image} />
+      <Text style={styles.phrase}>{textPhrase}</Text>
 
-      <Image source={imagem} style={styles.imagem} />
-
-      <Text style={styles.frase}>
-        {textoFrase}
-      </Text>
-
-      <TouchableOpacity style={styles.botao} onPress={quebrarBiscoito}>
-
-        <View styles={styles.areaBotao}>
-
-          <Text style={styles.textoBotao}>
-            {botao}
-          </Text>
-
+      <TouchableOpacity style={styles.button} onPress={breakCookie}>
+        <View style={styles.areaButton}>
+          <Text style={styles.textButton}>{button}</Text>
         </View>
-
       </TouchableOpacity>
-
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -66,23 +50,21 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff'
+    backgroundColor: '#FFF',
   },
-  imagem: {
+  image: {
     height: 250,
     width: 250,
-
   },
-  frase: {
+  phrase: {
     width: '80%',
     fontSize: 20,
     color: '#dd7b22',
-    margin: 0,
     fontStyle: 'italic',
     textAlign: 'center',
-    margin: 30
+    margin: 30,
   },
-  botao: {
+  button: {
     alignItems: 'center',
     justifyContent: 'center',
     width: 300,
@@ -91,14 +73,14 @@ const styles = StyleSheet.create({
     borderColor: '#dd7b22',
     borderRadius: 4,
   },
-  areaBotao: {
+  areaButton: {
     flex: 1,
+    alignItems: 'center',
     flexDirection: 'row',
   },
-  textoBotao: {
+  textButton: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#dd7b22'
-  }
-
+    color: '#dd7b22',
+  },
 });
